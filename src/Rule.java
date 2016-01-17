@@ -17,6 +17,7 @@ public class Rule {
 		this.currentPosition = r.getPosition();
 	}
 	
+	
 	char getFrom(){
 		return this.from;
 	}

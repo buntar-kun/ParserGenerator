@@ -1,9 +1,9 @@
 
 public class Step {
-	private LinkedRule[] convolution;
-	private LinkedRule[] translation;
-	private LinkedRule[] prediction;
-	void setOptions(LinkedRule[] A, LinkedRule[] B, LinkedRule[] C){
+	private Rule[] convolution;
+	private Rule[] translation;
+	private Rule[] prediction;
+	void setOptions(Rule[] A, Rule[] B, Rule[] C){
 		this.convolution = A;
 		this.translation = B;
 		this.prediction = C;
