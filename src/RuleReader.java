@@ -10,10 +10,17 @@ public class RuleReader {
 		ArrayList<Rule> result = new ArrayList<Rule>();
 		Scanner in = new Scanner(new File(path));
 		while(in.hasNext()){
-			s = in.nextLine() + "\r\n";
+			s = in.nextLine();
+		//	System.out.println(s);
 			String[] parts = s.split("->");
-			Rule newRule = new Rule(parts[0].charAt(0), parts[1].replaceAll(" ", ""), 0);
-			result.add(newRule);
+			String[] parts2 = parts[1].split("\\|");
+			for (int i = 0; i < parts2.length; ++i){
+				Rule newRule = new Rule(parts[0].charAt(0), parts2[i].replaceAll(" ", ""), 0);
+				if (newRule.getTo() != ""){
+					//System.out.println(newRule.getTo());
+					result.add(newRule);
+				}
+			}
 		}
 		in.close();
 		return result;
